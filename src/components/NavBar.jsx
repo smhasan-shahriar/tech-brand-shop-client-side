@@ -28,7 +28,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+    <div className="">
       <div className="navbar max-w-[1600px] mx-auto">
         <div className="navbar-start">
           <div className="dropdown">

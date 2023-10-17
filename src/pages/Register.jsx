@@ -7,7 +7,18 @@ import AuthHook from '../hooks/AuthHook';
 import { AuthContext } from '../authentication/MainAuth';
 
 const Register = () => {
-    const {createUser, updateUserProfile} = useContext(AuthContext);
+    const {createUser, updateUserProfile, socialLogIn} = useContext(AuthContext);
+    const handleSocialLogin = () => {
+        socialLogIn()
+        .then(result =>{
+            console.log(result.user);
+            toast('successfully logged in')
+        })
+        .catch(error => {
+            console.log(error.message)
+            toast(error.message)
+        })
+      }  
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
@@ -109,7 +120,7 @@ const Register = () => {
                 Already have account? Please{" "}
                 <Link to="/login"><span className="btn btn-link p-0 normal-case">Login</span></Link>
               </p>
-              <div className="flex items-center">
+              <div onClick={handleSocialLogin} className="flex items-center">
                 
                 <p className="btn btn-ghost normal-case btn-outline text-blue-600"><AiOutlineGoogle/> Register with Google</p>
               </div>

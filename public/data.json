@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "Samsung",
+        "image": "https://i.ibb.co/cTQt0Zq/Samsung-Logo-wine.png"
+    },
+    {
+        "id": "2",
+        "name": "Apple",
+        "image": "https://i.ibb.co/bJJnP0g/Apple-Inc-Logo-wine.png"
+    },
+    {
+        "id": "3",
+        "name": "Xiaomi",
+        "image": "https://i.ibb.co/cY4ZmYh/Xiaomi-Logo-wine.png"
+    },
+    {
+        "id": "4",
+        "name": "Google",
+        "image": "https://i.ibb.co/rcwfZ17/Google-Logo-wine.png"
+    },
+    {
+        "id": "5",
+        "name": "Microsoft",
+        "image": "https://i.ibb.co/4JGkbks/Microsoft-Logo-wine.png"
+    },
+    {
+        "id": "6",
+        "name": "Sony",
+        "image": "https://i.ibb.co/gWWJF5j/Sony-Logo-wine.png"
+    }
+]
