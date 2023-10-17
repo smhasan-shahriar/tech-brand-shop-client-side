@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
   return (
@@ -39,8 +40,8 @@ const LogIn = () => {
                 />
               </div>
               <p>
-                Already have account? Please{" "}
-                <span className="btn btn-link p-0 normal-case">Register</span>
+                Do not have account? Please{" "}
+                <Link to="/register"><span className="btn btn-link p-0 normal-case">Register</span></Link>
               </p>
               <div className="flex items-center">
                 
