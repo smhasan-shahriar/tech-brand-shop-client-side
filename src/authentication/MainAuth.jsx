@@ -21,8 +21,10 @@ const MainAuth = ({children}) => {
         return signOut(auth);
     }
 
-    const updateUserProfile = () => {
-        return updateProfile(); 
+    const updateUserProfile = (name, image) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: image
+        }); 
     }
 
     const myRef = {user, loading, createUser, logIn, logOut, updateUserProfile}

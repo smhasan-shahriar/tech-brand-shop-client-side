@@ -7,7 +7,7 @@ import AuthHook from '../hooks/AuthHook';
 import { AuthContext } from '../authentication/MainAuth';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
@@ -17,16 +17,29 @@ const Register = () => {
         const password=form.password.value;
         if(password.length < 6){
             toast('password cannot be less than 6 characters')
-            return 
+            return; 
         }
-
-        createUser(email, password)
-        .then(result => {
-            console.log(result.user)
-        })
-        .catch(error => {
-            console.error(error)
-        })
+        else if(!(/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).+$/.test(password))){
+            toast('password must contain at least one capital letter and one special character')
+            return; 
+        }
+        else{
+            createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                updateUserProfile(name, image)
+                .then(()=>{
+                    toast('user created succesfully')
+                })
+                .catch(error => {
+                    toast(error.message)
+                })
+            })
+            .catch(error => {
+                toast(error.message)
+            })
+        }
+       
 
 
     }
