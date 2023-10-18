@@ -25,7 +25,10 @@ const UpdateProduct = () => {
       .then(res => res.json())
       .then(data => {
           console.log(data);
-          toast('Product successfully updated')
+          if(data.modifiedCount > 0){
+            toast('Product successfully updated')
+          }
+          
   
       })
     }

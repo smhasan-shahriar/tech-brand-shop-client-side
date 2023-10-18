@@ -1,18 +1,22 @@
 import React, { useContext } from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../authentication/MainAuth";
 
 const LogIn = () => {
   const { logIn, socialLogIn } = useContext(AuthContext);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleSocialLogin = () => {
+    
     socialLogIn()
     .then(result =>{
         console.log(result.user);
-        toast('successfully logged in')
+        navigate(location?.state ? location.state : "/");
+        toast('successfully logged in');
+
     })
     .catch(error => {
         console.log(error.message)
@@ -27,11 +31,13 @@ const LogIn = () => {
     logIn(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location.state : "/");
         toast('successfully logged in')
       })
       .catch((error) => {
         toast(error.message);
       });
+      e.target.reset();
   };
   return (
     <div className="min-h-[95vh] bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
