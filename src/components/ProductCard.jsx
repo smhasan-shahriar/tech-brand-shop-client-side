@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
     <div className="w-full">
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
-          <img className="w-52 object-cover h-72"
+          <img className="lg:w-52 object-cover h-72"
             src={product.image}
             alt="Album"
           />
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
           <div className="card-actions justify-end">
          
             <Link to={`/products/${_id}`} className="btn btn-primary capitalize text-lg">Details</Link>
-            <button className="btn bg-orange-400 text-white capitalize text-lg">Update</button>
+            <Link to={`/updateproducts/${_id}`} className="btn bg-orange-400 text-white capitalize text-lg">Update</Link>
           </div>
         </div>
       </div>

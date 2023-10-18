@@ -56,7 +56,7 @@ const AddProduct = () => {
             required
           />
         </div>
-        <div className="flex gap-5"> 
+        <div className="flex flex-col lg:flex-row gap-2"> 
         <div className="form-control flex-1">
           <label className="label">
             <span className="label-text">Brand Name</span>

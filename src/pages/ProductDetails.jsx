@@ -12,9 +12,9 @@ const ProductDetails = () => {
                     <p className=''>{name}</p>
                 </div>
             </div>
-            <div className='flex'>
+            <div className='flex flex-col lg:flex-row'>
                 <div className='flex justify-center items-center my-10'>
-                    <p className='text-xl font-medium w-1/2'>{description}</p>
+                    <p className='text-xl font-medium lg:w-1/2 px-5'>{description}</p>
                 </div>
                 <div className='w-1/2 mx-auto flex flex-col justify-center items-center'>
                     <p className='font-bold text-xl'>Price: ${price}</p>
