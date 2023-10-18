@@ -28,7 +28,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="">
+    <div className="py-2">
       <div className="navbar max-w-[1600px] mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
