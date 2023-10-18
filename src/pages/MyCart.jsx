@@ -55,14 +55,14 @@ const MyCart = () => {
             </div>
             <div>
                 {
-                    displayProducts?.map((product, index) => <div key={index} className='flex my-5 items-center'>
-                        <div className='w-1/3'>
+                    displayProducts?.map((product, index) => <div key={index} className='flex flex-col md:flex-row my-5 items-center gap-10'>
+                        <div className='md:w-1/3'>
                             <img className='w-52 h-52 object-cover' src={product.image} alt="" />
                         </div>
-                        <div className='w-1/3'>
+                        <div className='md:w-1/3'>
                           
                             <h3 className='text-xl font-bold'>{product.name}</h3>
-                            <h3 className='text-xl'>{product.brand}</h3>
+                            <h3 className='text-xl text-center md:text-left'>{product.brand}</h3>
                             
 
                         </div>
@@ -70,7 +70,7 @@ const MyCart = () => {
                         <h3 className='text-xl font-bold'>Price: ${product.price}</h3>
                         </div>
                         <div>
-                            <button onClick={() => handleDelete(product._id)} className='btn bg-red-500 text-white lg:ml-20'>Delete</button>
+                            <button onClick={() => handleDelete(product._id)} className='btn bg-red-500 text-white'>Delete</button>
                         </div>
 
                     </div>)
