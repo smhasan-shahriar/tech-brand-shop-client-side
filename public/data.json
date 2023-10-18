@@ -1,32 +1,62 @@
 [
-    {
-        "id": "1",
-        "name": "Samsung",
-        "image": "https://i.ibb.co/cTQt0Zq/Samsung-Logo-wine.png"
-    },
-    {
-        "id": "2",
-        "name": "Apple",
-        "image": "https://i.ibb.co/bJJnP0g/Apple-Inc-Logo-wine.png"
-    },
-    {
-        "id": "3",
-        "name": "Xiaomi",
-        "image": "https://i.ibb.co/cY4ZmYh/Xiaomi-Logo-wine.png"
-    },
-    {
-        "id": "4",
-        "name": "Google",
-        "image": "https://i.ibb.co/rcwfZ17/Google-Logo-wine.png"
-    },
-    {
-        "id": "5",
-        "name": "Microsoft",
-        "image": "https://i.ibb.co/4JGkbks/Microsoft-Logo-wine.png"
-    },
-    {
-        "id": "6",
-        "name": "Sony",
-        "image": "https://i.ibb.co/gWWJF5j/Sony-Logo-wine.png"
-    }
+  {
+    "id": "1",
+    "name": "Samsung",
+    "image": "https://i.ibb.co/cTQt0Zq/Samsung-Logo-wine.png",
+    "advertise": [
+      "https://i.ibb.co/GtyvG0j/samsung-ad-3.jpg",
+      "https://i.ibb.co/g616Ry7/samsung-ad-2.jpg",
+      "https://i.ibb.co/8mCww6w/samsung-ad-1.jpg"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Apple",
+    "image": "https://i.ibb.co/bJJnP0g/Apple-Inc-Logo-wine.png",
+    "advertise": [
+        "https://i.ibb.co/r6LN2XW/apple-ad-1.jpg",
+        "https://i.ibb.co/C2XvgbD/apple-ad-3.jpg",
+        "https://i.ibb.co/QDbc0Wc/apple-ad-2.png"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Xiaomi",
+    "image": "https://i.ibb.co/cY4ZmYh/Xiaomi-Logo-wine.png",
+    "advertise": [
+      "https://i.ibb.co/0Cp2swr/xiaomi-ad-3.jpg",
+      "https://i.ibb.co/xhpYp1S/xiaomi-ad-2.jpg",
+      "https://i.ibb.co/0G6mBKV/xiaomi-ad-1.jpg"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Google",
+    "image": "https://i.ibb.co/rcwfZ17/Google-Logo-wine.png",
+    "advertise": [
+      "https://i.ibb.co/9nDw2XW/google-ad-3.jpg",
+      "https://i.ibb.co/3MbN99F/google-ad-2.jpg",
+      "https://i.ibb.co/7S174H4/google-ad-1.png"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Microsoft",
+    "image": "https://i.ibb.co/4JGkbks/Microsoft-Logo-wine.png",
+    "advertise": [
+      "https://i.ibb.co/kSrkrjm/microsoft-ad-3.jpg",
+      "https://i.ibb.co/BwxD7g5/microsoft-ad-2.png",
+      "https://i.ibb.co/CMmSk7N/microsoft-ad-1.jpg"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Sony",
+    "image": "https://i.ibb.co/gWWJF5j/Sony-Logo-wine.png",
+    "advertise": [
+      "https://i.ibb.co/Bz60cCK/sony-ad-3.jpg",
+      "https://i.ibb.co/qJDfQnm/sony-ad-2.jpg",
+      "https://i.ibb.co/vs8SmmV/sony-ad-1.jpg"
+    ]
+  }
 ]
