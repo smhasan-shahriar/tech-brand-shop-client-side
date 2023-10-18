@@ -1,66 +1,67 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const UpdateProduct = () => {
-    const product = useLoaderData();
-    console.log(product)
-    const handleUpdateProduct = e => {
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value;
-      const image = form.image.value;
-      const brand = form.brand.value;
-      const price = form.price.value;
-      const rating = form.rating.value;
-      const type= form.type.value; 
-      const updatedProduct = {name, image, brand, price, rating, type};
-      fetch(`http://localhost:5000/updateproducts/${product._id}`, {
-          method: 'PUT',
-          headers: {
-              'content-type': 'application/json'
-          },
-          body: JSON.stringify(updatedProduct)
-      })
-      .then(res => res.json())
-      .then(data => {
-          console.log(data);
-          if(data.modifiedCount > 0){
-            toast('Product successfully updated')
-          }
-          
-  
-      })
-    }
-    return (
-      <div className="max-w-[1400px] mx-auto bg-base-200 rounded-lg shadow-xl p-10 my-20">
-        <h2 className="text-4xl font-bold my-10 text-center">Update Product</h2>
-        <form onSubmit={handleUpdateProduct}  className="w-2/3 mx-auto">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Product Name</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Product Name"
-              name="name"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Product Image</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Image URL"
-              name="image"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="flex flex-col lg:flex-row gap-2"> 
+  const product = useLoaderData();
+  console.log(product);
+  const handleUpdateProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const image = form.image.value;
+    const brand = form.brand.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const type = form.type.value;
+    const updatedProduct = { name, image, brand, price, rating, type };
+    fetch(
+      `https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/updateproducts/${product._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          toast("Product successfully updated");
+        }
+      });
+  };
+  return (
+    <div className="max-w-[1400px] mx-auto bg-base-200 rounded-lg shadow-xl p-10 my-20">
+      <h2 className="text-4xl font-bold my-10 text-center">Update Product</h2>
+      <form onSubmit={handleUpdateProduct} className="w-2/3 mx-auto">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Product Name</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Product Name"
+            name="name"
+            className="input input-bordered"
+            required
+          />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Product Image</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Image URL"
+            name="image"
+            className="input input-bordered"
+            required
+          />
+        </div>
+        <div className="flex flex-col lg:flex-row gap-2">
           <div className="form-control flex-1">
             <label className="label">
               <span className="label-text">Brand Name</span>
@@ -99,27 +100,29 @@ const UpdateProduct = () => {
               <option value="console">Gaming Console</option>
             </select>
           </div>
-          </div>
-          
-          
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Rating</span>
-            </label>
-            <input
-              type="number"
-              step=".01"
-              placeholder="Rating"
-              name="rating"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <input className="btn btn-outline w-full my-10 normal-case text-xl font-bold" type="submit" value="Submit" />
-        </form>
-      </div>
-    );
-  };
-  
+        </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Rating</span>
+          </label>
+          <input
+            type="number"
+            step=".01"
+            placeholder="Rating"
+            name="rating"
+            className="input input-bordered"
+            required
+          />
+        </div>
+        <input
+          className="btn btn-outline w-full my-10 normal-case text-xl font-bold"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  );
+};
 
 export default UpdateProduct;
