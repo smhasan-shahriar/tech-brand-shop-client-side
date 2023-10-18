@@ -6,6 +6,7 @@ import Carousel from "nuka-carousel";
 import ProductCard from "../components/ProductCard";
 
 const BrandPage = () => {
+    window.scrollTo({top: 0})
   const { name } = useParams();
   const products = useLoaderData();
   const brand = name.toLowerCase();
