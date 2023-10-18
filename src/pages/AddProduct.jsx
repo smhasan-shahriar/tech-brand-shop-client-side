@@ -1,12 +1,32 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
   const handleAddProduct = e => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
+    const image = form.image.value;
+    const brand = form.brand.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const description = form.description.value;
     const type= form.type.value; 
-    console.log(name, type)
+    const newProduct = {name, image, brand, price, rating, description, type};
+    fetch('http://localhost:5000/products', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(newProduct)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        toast('Product successfully added')
+
+    })
   }
   return (
     <div className="max-w-[1400px] mx-auto bg-base-200 rounded-lg shadow-xl p-10 my-20">
@@ -51,6 +71,19 @@ const AddProduct = () => {
         </div>
         <div className="form-control flex-1">
           <label className="label">
+            <span className="label-text">Price</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Price"
+            name="price"
+            step=".01"
+            className="input input-bordered"
+            required
+          />
+        </div>
+        <div className="form-control flex-1">
+          <label className="label">
             <span className="label-text">Product Category</span>
           </label>
           <select name="type" className="input input-bordered">
@@ -75,6 +108,7 @@ const AddProduct = () => {
           </label>
           <input
             type="number"
+            step=".01"
             placeholder="name"
             name="rating"
             className="input input-bordered"

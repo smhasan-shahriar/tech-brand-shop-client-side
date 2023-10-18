@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const BrandCard = ({ brand }) => {
   const { name, image } = brand;
+  const navigate = useNavigate()
+  const handleClick = () =>{
+    navigate(`brands/${name}`)
+    
+  }
   return (
-    <div>
+    <div onClick={handleClick}>
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img
