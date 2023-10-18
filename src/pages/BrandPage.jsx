@@ -11,7 +11,9 @@ const BrandPage = () => {
   const brand = name.toLowerCase();
   return (
     <div className="max-w-[1400px] mx-auto mb-20">
-      <div>
+      {
+        products.length > 0 ? <div>
+<div>
         <Carousel wrapAround={true} className="">
           {products.slice(0,3).map((product) => (
             <div key={product._id} className="flex">
@@ -26,9 +28,6 @@ const BrandPage = () => {
                 <div className="hero-content text-center text-neutral-content p-20">
                   <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold">Buy {product.name} at lowest price</h1>
-                    <p className="mb-5">
-                       {product.description}
-                    </p>
                     <button className="btn btn-primary normal-case">Use Coupon: {product.brand}10</button>
                   </div>
                 </div>
@@ -43,6 +42,12 @@ const BrandPage = () => {
             products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)
           }
       </div>
+
+        </div> : <div className="h-[95vh] flex justify-center items-center text-6xl font-bold text-center">
+            Sorry, Products from this brand is currently unavailable
+        </div>
+      }  
+      
     </div>
   );
 };

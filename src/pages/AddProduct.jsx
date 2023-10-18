@@ -92,6 +92,7 @@ const AddProduct = () => {
             <option value="headphone">Headphone</option>
             <option value="smartwatch">Smart Watch</option>
             <option value="tablet">Tablet</option>
+            <option value="console">Gaming Console</option>
           </select>
         </div>
         </div>
@@ -109,7 +110,7 @@ const AddProduct = () => {
           <input
             type="number"
             step=".01"
-            placeholder="name"
+            placeholder="Rating"
             name="rating"
             className="input input-bordered"
             required

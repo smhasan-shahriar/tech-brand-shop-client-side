@@ -1,7 +1,8 @@
 import React from "react";
-
+import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
-    const {name, image, brand, price, rating, description, type} = product
+    const {_id, name, image, brand, price, rating, description, type} = product
   return (
     <div className="w-full">
       <div className="card lg:card-side bg-base-100 shadow-xl">
@@ -11,14 +12,18 @@ const ProductCard = ({ product }) => {
             alt="Album"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">{name}</h2>
-          <p>Brand: {brand}</p>
-          <p>Type: {type}</p>
-          <p>Price: {price}</p>
-          <p>Rating: {rating}</p>
+        <div className="card-body space-y-1">
+          <h2 className="card-title text-2xl font-bold">{name}</h2>
+          <div className="space-y-2">
+          <p>Brand: <span className="font-semibold">{brand}</span> </p>
+          <p>Type:  <span className="font-semibold capitalize">{type}</span> </p>
+          <p className="flex gap-2 items-center">Rating:  <span className="font-semibold flex items-center">{rating} <AiFillStar></AiFillStar></span> </p>
+          <p className="">Price:  <span className="font-bold">${price}</span> </p>
+          </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Details</button>
+         
+            <Link to={`/products/${_id}`} className="btn btn-primary capitalize text-lg">Details</Link>
+            <button className="btn bg-orange-400 text-white capitalize text-lg">Update</button>
           </div>
         </div>
       </div>
