@@ -5,21 +5,28 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../authentication/MainAuth';
 
 const MyCart = () => {
-    const {user} = useContext(AuthContext);
-    const [products, setProducts] = useState([]);
-    const cartProducts = useLoaderData();
-    const [cart, setCart] = useState(cartProducts)
-    const userProducts = cart.filter(product => product.email == user.email)
-    
-    useEffect(()=> {
-        fetch('http://localhost:5000/products')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
-    
-    const productsArray = []
-    userProducts.map(product => productsArray.push(product.productId));
-    const cartProductsFull = products.filter(product => productsArray.includes(product._id))
+   const { user } = useContext(AuthContext);
+    const { cart, products } = useLoaderData();
+    const [displayProducts, setDisplayProducts] = useState([]);
+  
+    useEffect(() => {
+ 
+      const userProducts = cart.filter(product => product.email === user.email);
+      const productsArray = userProducts.map(product => product.productId);
+      const displayArray = []
+      for (let item of productsArray){
+        for (let product of products){
+            if(product._id == item){
+                displayArray.push(product)
+            }
+        }
+    }
+ 
+      setDisplayProducts(displayArray);
+    }, [user, cart, products]);
+  
+    console.log(displayProducts);
+
     const email = user.email
     const myRef = {email}
     const handleDelete = (id) => {
@@ -35,8 +42,8 @@ const MyCart = () => {
             console.log(data);
             if(data.deletedCount>0){
                 toast('successfully deleted');
-                const newCart = cartProducts.filter(product => product.id !== id)
-                setCart(newCart)
+                const updatedProducts = displayProducts.filter(product => product._id !== id);
+                setDisplayProducts(updatedProducts);
             }
         })
     }
@@ -44,11 +51,11 @@ const MyCart = () => {
         <div className='max-w-[1000px] mx-auto rounded-lg shadow-xl px-10 py-10'>
             <div className='flex justify-between items-center'>
                 <h2 className="text-4xl font-bold my-10 text-left">My Cart</h2>
-                <p className='font-medium'>Total Items: {userProducts?.length}</p>
+                <p className='font-medium'>Total Items: {displayProducts?.length}</p>
             </div>
             <div>
                 {
-                    cartProductsFull?.map(product => <div key={product._id} className='flex my-5 items-center'>
+                    displayProducts?.map((product, index) => <div key={index} className='flex my-5 items-center'>
                         <div className='w-1/3'>
                             <img className='w-52 h-52 object-cover' src={product.image} alt="" />
                         </div>

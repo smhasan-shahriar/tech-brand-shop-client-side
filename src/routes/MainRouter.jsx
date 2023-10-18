@@ -37,7 +37,15 @@ const MainRouter = createBrowserRouter([
         {
           path:"/mycart",
           element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes> ,
-          loader: () => fetch('http://localhost:5000/mycart')
+          loader: async () => {
+            const cartLoader = await fetch('http://localhost:5000/mycart');
+            const productLoader= await fetch('http://localhost:5000/products');
+        
+            return {
+              cart: await cartLoader.json(),
+              products: await productLoader.json(),
+            };
+          },
         },
         {
           path: "/brands/:name",
