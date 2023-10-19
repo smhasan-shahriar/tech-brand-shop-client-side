@@ -12,7 +12,7 @@ const Register = () => {
         socialLogIn()
         .then(result =>{
             console.log(result.user);
-            toast('successfully logged in')
+            toast('You have successfully registered with Google')
         })
         .catch(error => {
             console.log(error.message)
@@ -40,7 +40,7 @@ const Register = () => {
                 console.log(result.user)
                 updateUserProfile(name, image)
                 .then(()=>{
-                    toast('user created succesfully')
+                    toast('You have successfully registered')
                 })
                 .catch(error => {
                     toast(error.message)
@@ -55,7 +55,7 @@ const Register = () => {
 
     }
     return (
-        <div className="min-h-[92vh] mt-20 py-20 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
+        <div className="min-h-[92vh] mt-20 md:mt-0 py-20 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
       <div className="flex items-center justify-center">
         <div>
           <h2 className="text-5xl font-bold mb-10 text-center">Register Now</h2>

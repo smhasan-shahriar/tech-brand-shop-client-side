@@ -15,7 +15,7 @@ const LogIn = () => {
     .then(result =>{
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
-        toast('successfully logged in');
+        toast('You have successfully logged in');
 
     })
     .catch(error => {
@@ -32,7 +32,7 @@ const LogIn = () => {
       .then((result) => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
-        toast('successfully logged in')
+        toast('You have successfully logged in')
       })
       .catch((error) => {
         toast(error.message);
@@ -40,7 +40,7 @@ const LogIn = () => {
       e.target.reset();
   };
   return (
-    <div className="min-h-[95vh] mt-20 py-20 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
+    <div className="min-h-[95vh] mt-20 md:mt-0 py-20 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
       <div className="flex items-center justify-center">
         <div>
           <h2 className="text-5xl font-bold mb-10 text-center">Login Now</h2>
