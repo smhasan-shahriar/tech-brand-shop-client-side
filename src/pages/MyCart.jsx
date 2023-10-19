@@ -41,8 +41,15 @@ const MyCart = () => {
         console.log(data);
         if (data.deletedCount > 0) {
           toast("successfully deleted");
+          let found = false;
           const updatedProducts = displayProducts.filter(
-            (product) => product._id !== id
+            (product) =>{ 
+              if (product._id === id && !found){
+                found = true;
+                return false;
+              }
+              
+              return true}
           );
           setDisplayProducts(updatedProducts);
         }
