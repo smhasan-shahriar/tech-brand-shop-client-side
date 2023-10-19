@@ -22,7 +22,7 @@ const BrandPage = () => {
   const brand = name.toLowerCase();
   return (
     <div className="max-w-[1400px] mx-auto mb-20 mt-10">
-      {products.length > 0 ? (
+      {products && products.length > 0 ? (
         <div>
           <div>
             <Carousel wrapAround={true}>
@@ -40,7 +40,7 @@ const BrandPage = () => {
             Products from {name}
           </h2>
           <div className="grid lg:grid-cols-2 gap-5 justify-items-center mx-5">
-            {products.map((product) => (
+            {products?.map((product) => (
               <ProductCard key={product._id} product={product}></ProductCard>
             ))}
           </div>

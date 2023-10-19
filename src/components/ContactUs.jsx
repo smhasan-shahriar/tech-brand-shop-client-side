@@ -1,4 +1,6 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
   return (
@@ -13,7 +15,11 @@ const ContactUs = () => {
           />
         </div>
         <div className="w-full md:w-3/5 flex items-center">
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-5 flex-1">
+          <form onSubmit={(e) => {
+            e.preventDefault()
+          toast('Thanks for reaching us.')
+        e.target.reset()}
+            } className="space-y-5 flex-1">
             <div className="form-control">
               <label className="input-group">
                 <span>Name</span>
@@ -21,6 +27,7 @@ const ContactUs = () => {
                   type="text"
                   placeholder="Your Name"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -32,6 +39,7 @@ const ContactUs = () => {
                   type="text"
                   placeholder="Your Email"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -42,11 +50,12 @@ const ContactUs = () => {
                   type="text"
                   placeholder="Your Phone"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
             </div>
-            <textarea placeholder="Description" className="textarea textarea-bordered textarea-lg w-full" ></textarea>
+            <textarea placeholder="Description" className="textarea textarea-bordered textarea-lg w-full" required ></textarea>
            <button className="btn btn-outline bg-slate-500 w-full text-white">Submit</button>
           </form>
         </div>
