@@ -23,7 +23,10 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast("Product successfully added");
+        if (data.insertedId){
+          toast("Product successfully added");
+        }
+       
       });
   };
   return (
