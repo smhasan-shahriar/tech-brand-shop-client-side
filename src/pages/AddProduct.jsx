@@ -112,7 +112,7 @@ const AddProduct = () => {
           <input
             type="number"
             step=".01"
-            placeholder="Rating"
+            placeholder="Rating (Out of 5)"
             name="rating"
             className="input input-bordered"
             min="0"
