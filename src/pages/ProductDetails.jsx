@@ -13,16 +13,13 @@ const ProductDetails = () => {
     const email = user?.email;
     const productId = _id;
     const userProduct = { email, productId };
-    fetch(
-      "https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/mycart",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(userProduct),
-      }
-    )
+    fetch("https://brandshop-server-indol.vercel.app/mycart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userProduct),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

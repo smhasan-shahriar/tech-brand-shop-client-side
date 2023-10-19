@@ -16,7 +16,7 @@ const UpdateProduct = () => {
     const type = form.type.value;
     const updatedProduct = { name, image, brand, price, rating, type };
     fetch(
-      `https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/updateproducts/${product._id}`,
+      `https://brandshop-server-indol.vercel.app/updateproducts/${product._id}`,
       {
         method: "PUT",
         headers: {

@@ -29,16 +29,13 @@ const MyCart = () => {
   const email = user.email;
   const myRef = { email };
   const handleDelete = (id) => {
-    fetch(
-      `https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/mycart/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(myRef),
-      }
-    )
+    fetch(`https://brandshop-server-indol.vercel.app/mycart/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(myRef),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

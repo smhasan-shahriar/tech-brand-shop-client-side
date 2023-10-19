@@ -13,16 +13,13 @@ const AddProduct = () => {
     const description = form.description.value;
     const type = form.type.value;
     const newProduct = { name, image, brand, price, rating, description, type };
-    fetch(
-      "https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/products",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newProduct),
-      }
-    )
+    fetch("https://brandshop-server-indol.vercel.app/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

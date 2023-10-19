@@ -47,10 +47,10 @@ const MainRouter = createBrowserRouter([
         ),
         loader: async () => {
           const cartLoader = await fetch(
-            "https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/mycart"
+            "https://brandshop-server-indol.vercel.app/mycart"
           );
           const productLoader = await fetch(
-            "https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/products"
+            "https://brandshop-server-indol.vercel.app/products"
           );
 
           return {
@@ -64,7 +64,7 @@ const MainRouter = createBrowserRouter([
         element: <BrandPage></BrandPage>,
         loader: ({ params }) =>
           fetch(
-            `https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/brands/${params.name}`
+            `https://brandshop-server-indol.vercel.app/brands/${params.name}`
           ),
       },
       {
@@ -76,7 +76,7 @@ const MainRouter = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/products/${params.id}`
+            `https://brandshop-server-indol.vercel.app/products/${params.id}`
           ),
       },
       {
@@ -88,7 +88,7 @@ const MainRouter = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brandshop-server-ig5c4su0y-s-m-hasan-shahriars-projects.vercel.app/updateproducts/${params.id}`
+            `https://brandshop-server-indol.vercel.app/updateproducts/${params.id}`
           ),
       },
     ],
