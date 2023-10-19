@@ -1,14 +1,26 @@
-import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../authentication/MainAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  const {id} = useParams()
   window.scrollTo({ top: 0 });
-  const product = useLoaderData();
+  const [product, setProduct] = useState({})
   const { _id, name, image, brand, price, rating, description, type } = product;
+  const fetchFunction = async () => {
+    const response = await fetch(`https://brandshop-server-indol.vercel.app/products/${id}`)
+    if (response.status === 200){
+      const data = await response.json();
+      setProduct(data)
+      return;
+    }
+    setTimeout(fetchFunction, 500)
+  }
+  useEffect(()=>{
+    fetchFunction();
+  },[])
   const handleAddToCart = () => {
     const email = user?.email;
     const productId = _id;
@@ -29,7 +41,7 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div className="max-w-[1920px] mx-auto mt-20">
+    <div className="max-w-[1920px] mx-auto mt-16 md:mt-0 mb-20">
       <div className="relative">
         <img className="h-[70vh] object-cover w-full" src={image} alt="" />
         <div className="text-5xl bg-black text-white py-5 px-10 absolute bottom-0 w-full bg-opacity-60 text-center">

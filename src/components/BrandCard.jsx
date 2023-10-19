@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from 'react-router-dom';
 
 const BrandCard = ({ brand }) => {
@@ -10,7 +9,7 @@ const BrandCard = ({ brand }) => {
   }
   return (
     <div onClick={handleClick}>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card max-w-96 bg-base-100 shadow-xl">
         <figure>
           <img
             src={image}

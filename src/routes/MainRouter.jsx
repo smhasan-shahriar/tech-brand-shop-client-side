@@ -1,4 +1,3 @@
-import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import ErrorPage from "../pages/ErrorPage";
@@ -44,28 +43,11 @@ const MainRouter = createBrowserRouter([
           <PrivateRoutes>
             <MyCart></MyCart>
           </PrivateRoutes>
-        ),
-        loader: async () => {
-          const cartLoader = await fetch(
-            "https://brandshop-server-indol.vercel.app/mycart"
-          );
-          const productLoader = await fetch(
-            "https://brandshop-server-indol.vercel.app/products"
-          );
-
-          return {
-            cart: await cartLoader.json(),
-            products: await productLoader.json(),
-          };
-        },
+        )
       },
       {
         path: "/brands/:name",
-        element: <BrandPage></BrandPage>,
-        loader: ({ params }) =>
-          fetch(
-            `https://brandshop-server-indol.vercel.app/brands/${params.name}`
-          ),
+        element: <BrandPage></BrandPage>
       },
       {
         path: "/products/:id",
@@ -73,11 +55,7 @@ const MainRouter = createBrowserRouter([
           <PrivateRoutes>
             <ProductDetails></ProductDetails>
           </PrivateRoutes>
-        ),
-        loader: ({ params }) =>
-          fetch(
-            `https://brandshop-server-indol.vercel.app/products/${params.id}`
-          ),
+        )
       },
       {
         path: "/updateproducts/:id",

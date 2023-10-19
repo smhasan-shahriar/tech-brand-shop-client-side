@@ -6,8 +6,35 @@ import { AuthContext } from "../authentication/MainAuth";
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);
-  const { cart, products } = useLoaderData();
+  const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState([])
   const [displayProducts, setDisplayProducts] = useState([]);
+  const fetchCartFunction = async () => {
+    const response = await fetch("https://brandshop-server-indol.vercel.app/mycart")
+    if (response.status === 200){
+      const data = await response.json();
+      setCart(data)
+      return;
+    }
+    setTimeout(fetchCartFunction, 500)
+  }
+  useEffect(()=>{
+    fetchCartFunction();
+  },[])
+
+
+  const fetchProductsFunction = async () => {
+    const response = await fetch("https://brandshop-server-indol.vercel.app/products")
+    if (response.status === 200){
+      const data = await response.json();
+      setProducts(data)
+      return;
+    }
+    setTimeout(fetchProductsFunction, 500)
+  }
+  useEffect(()=>{
+    fetchProductsFunction();
+  },[])
 
   useEffect(() => {
     const userProducts = cart.filter((product) => product.email === user.email);
@@ -24,7 +51,6 @@ const MyCart = () => {
     setDisplayProducts(displayArray);
   }, [user, cart, products]);
 
-  console.log(displayProducts);
 
   const email = user.email;
   const myRef = { email };

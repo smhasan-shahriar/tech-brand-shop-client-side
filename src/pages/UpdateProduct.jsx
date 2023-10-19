@@ -1,10 +1,22 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const UpdateProduct = () => {
-  const product = useLoaderData();
-  console.log(product);
+  const {id} = useParams()
+  const [product, setProduct] = useState({})
+  const fetchFunction = async () => {
+    const response = await fetch(`https://brandshop-server-indol.vercel.app/products/${id}`)
+    if (response.status === 200){
+      const data = await response.json();
+      setProduct(data)
+      return;
+    }
+    setTimeout(fetchFunction, 500)
+  }
+  useEffect(()=>{
+    fetchFunction();
+  },[])
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;

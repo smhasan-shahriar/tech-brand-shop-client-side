@@ -9,6 +9,18 @@ import { useEffect } from "react";
 
 const BrandPage = () => {
   window.scrollTo({ top: 0 });
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShow(true);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const [products, setProducts] = useState([]);
+
   const [selectedBrand, setSelectedBrand] = useState([]);
   useEffect(() => {
     fetch("/data.json")
@@ -18,11 +30,23 @@ const BrandPage = () => {
   const { name } = useParams();
   const particularBrand = selectedBrand.find((item) => item.name === name);
   const advertises = particularBrand?.advertise;
-  const products = useLoaderData();
-  const brand = name.toLowerCase();
+  const fetchFunction = async () => {
+    const response = await fetch(
+      `https://brandshop-server-indol.vercel.app/brands/${name}`
+    );
+    if (response.status === 200) {
+      const data = await response.json();
+      setProducts(data);
+      return;
+    }
+    setTimeout(fetchFunction, 500);
+  };
+  useEffect(() => {
+    fetchFunction();
+  }, []);
   return (
     <div className="max-w-[1400px] mx-auto mb-20 mt-10">
-      {products && products.length > 0 ? (
+      {products.length > 0 ? (
         <div>
           <div>
             <Carousel wrapAround={true}>
@@ -58,12 +82,12 @@ const BrandPage = () => {
               ))}
             </Carousel>
           </div>
-          <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
+        {
+          show &&   <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
           Sorry, Products from this brand is currently unavailable
         </div>
+        }
         </div>
-
-      
       )}
     </div>
   );
