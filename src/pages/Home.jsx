@@ -17,7 +17,6 @@ const Home = () => {
             <BrandContainer></BrandContainer>
             <LatestBlog></LatestBlog>
             <ContactUs></ContactUs>
-            <Footer></Footer>
         </div>
     );
 };

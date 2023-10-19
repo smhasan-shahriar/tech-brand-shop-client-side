@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="max-w-[1920px] mx-auto">
+    <div className="max-w-[1920px] mx-auto mt-16 md:mt-0">
       <div
         className="hero min-h-[70vh]"
         style={{
@@ -17,7 +17,7 @@ const Banner = () => {
             <p className="mb-5">
             Elevate Your Digital Lifestyle with the Latest Gadgets and Gear. Explore, Innovate, Upgrade – Your Tech Journey Starts Here.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+           
           </div>
         </div>
       </div>

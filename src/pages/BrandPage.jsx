@@ -39,7 +39,7 @@ const BrandPage = () => {
           <h2 className="text-4xl font-bold my-10 text-center">
             Products from {name}
           </h2>
-          <div className="grid lg:grid-cols-2 gap-5 justify-items-center">
+          <div className="grid lg:grid-cols-2 gap-5 justify-items-center mx-5">
             {products.map((product) => (
               <ProductCard key={product._id} product={product}></ProductCard>
             ))}

@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-neutral">
+    <div className="w-full bg-neutral absolute">
       <footer className="footer items-center p-4 text-neutral-content max-w-[1600px] mx-auto">
         <aside className="items-center grid-flow-col">
         <img

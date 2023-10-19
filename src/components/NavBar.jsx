@@ -6,6 +6,7 @@ import { AuthContext } from "../authentication/MainAuth";
 import { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 import ThemeChanger from '../components/ThemeChanger';
+import { useState } from "react";
 
 const NavBar = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const NavBar = () => {
   }, [])
 
   const { user, logOut } = useContext(AuthContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const handleLogOut = () => {
     logOut()
     .then(()=> toast('logged out'))
@@ -39,11 +41,11 @@ const NavBar = () => {
     <div className="py-2">
       <div className="navbar max-w-[1600px] mx-auto">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -56,15 +58,17 @@ const NavBar = () => {
                 />
               </svg>
             </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              {navLinks}
-            </ul>
+            {isDropdownOpen && (
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                {navLinks}
+              </ul>
+            )}
           </div>
           <img
-            className="md:w-16 w-12"
+            className="md:w-16 w-10"
             src="https://i.ibb.co/yVqW2pp/icons8-technology-64.png"
             alt=""
           />
@@ -75,6 +79,7 @@ const NavBar = () => {
         </div>
         {user ? (
           <div className="navbar-end md:space-x-4 space-x-1">
+            <ThemeChanger></ThemeChanger>
             <p>{user?.displayName}</p>
             <img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" />
             <Link onClick={handleLogOut} className="btn">

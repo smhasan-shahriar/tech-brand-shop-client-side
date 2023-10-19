@@ -13,7 +13,7 @@ const ContactUs = () => {
           />
         </div>
         <div className="w-full md:w-3/5 flex items-center">
-          <form className="space-y-5 flex-1">
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-5 flex-1">
             <div className="form-control">
               <label className="input-group">
                 <span>Name</span>
@@ -47,7 +47,7 @@ const ContactUs = () => {
             </div>
             </div>
             <textarea placeholder="Description" className="textarea textarea-bordered textarea-lg w-full" ></textarea>
-           <input className="btn btn-outline bg-slate-500 w-full text-white" type="submit" value="Submit" />
+           <button className="btn btn-outline bg-slate-500 w-full text-white">Submit</button>
           </form>
         </div>
       </div>

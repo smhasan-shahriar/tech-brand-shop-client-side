@@ -85,7 +85,7 @@ const AddProduct = () => {
           </div>
           <div className="form-control flex-1">
             <label className="label">
-              <span className="label-text">Product Category</span>
+              <span className="label-text">Product Type</span>
             </label>
             <select name="type" className="input input-bordered">
               <option value="computer">Computer</option>

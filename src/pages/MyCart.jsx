@@ -52,7 +52,7 @@ const MyCart = () => {
       });
   };
   return (
-    <div className="max-w-[1000px] mx-auto rounded-lg shadow-xl px-10 py-10">
+    <div className="max-w-[1000px] min-h-[75vh] mx-auto rounded-lg shadow-xl px-10 py-10 mb-20">
       <div className="flex justify-between items-center">
         <h2 className="text-4xl font-bold my-10 text-left">My Cart</h2>
         <p className="font-medium">Total Items: {displayProducts?.length}</p>
