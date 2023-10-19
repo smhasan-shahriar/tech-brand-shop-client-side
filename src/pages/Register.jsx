@@ -55,7 +55,7 @@ const Register = () => {
 
     }
     return (
-        <div className="min-h-[92vh] bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
+        <div className="min-h-[92vh] mt-20 py-20 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 flex justify-center items-center">
       <div className="flex items-center justify-center">
         <div>
           <h2 className="text-5xl font-bold mb-10 text-center">Register Now</h2>

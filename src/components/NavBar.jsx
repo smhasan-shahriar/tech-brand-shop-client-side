@@ -32,9 +32,12 @@ const NavBar = () => {
       <li>
         <NavLink to="/mycart">My Cart</NavLink>
       </li>
-      <li>
+      {
+        !user && <li>
         <NavLink to="/register">Register</NavLink>
       </li>
+      }
+      
     </>
   );
   return (
