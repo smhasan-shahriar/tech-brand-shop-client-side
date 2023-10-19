@@ -29,7 +29,7 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div className="max-w-[1920px] mx-auto ">
+    <div className="max-w-[1920px] mx-auto mt-20">
       <div className="relative">
         <img className="h-[70vh] object-cover w-full" src={image} alt="" />
         <div className="text-5xl bg-black text-white py-5 px-10 absolute bottom-0 w-full bg-opacity-60 text-center">
