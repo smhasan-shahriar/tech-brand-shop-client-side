@@ -3,8 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../authentication/MainAuth";
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
+import ThemeChanger from '../components/ThemeChanger';
 
 const NavBar = () => {
+  useEffect(() => {
+    themeChange(false)
+    // 👆 false parameter is required for react project
+  }, [])
+
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
@@ -75,10 +83,11 @@ const NavBar = () => {
           </div>
         ) : (
           <div className="navbar-end">
-            <p>{user?.displayName}</p>
+            <ThemeChanger></ThemeChanger>
             <Link to="/login" className="btn">
               Log In
             </Link>
+            
           </div>
         )}
       </div>

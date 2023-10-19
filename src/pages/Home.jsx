@@ -6,7 +6,9 @@ import BrandContainer from '../components/BrandContainer';
 import LatestBlog from '../components/LatestBlog';
 import ContactUs from '../components/ContactUs';
 
+
 const Home = () => {
+  
     const {age} = AuthHook();
     console.log(age)
     return (
