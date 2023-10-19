@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
           <div className="space-y-2">
           <p>Brand: <span className="font-semibold">{brand}</span> </p>
           <p>Type:  <span className="font-semibold capitalize">{type}</span> </p>
-          <p className="flex gap-2 items-center">Rating:  <span className="font-semibold flex items-center">{rating} <AiFillStar></AiFillStar></span> </p>
+          <p className="flex gap-2 items-center">Rating:<span className="font-semibold -ml-1 -mr-[6px]">{rating}</span>/5 </p>
           <p className="">Price:  <span className="font-bold">${price}</span> </p>
           </div>
           <div className="card-actions justify-end">

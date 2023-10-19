@@ -112,6 +112,8 @@ const UpdateProduct = () => {
             placeholder="Rating"
             name="rating"
             className="input input-bordered"
+            min="0"
+            max="5"
             required
           />
         </div>
