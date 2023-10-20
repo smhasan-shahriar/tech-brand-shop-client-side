@@ -50,7 +50,7 @@ const BrandPage = () => {
       <div className="max-w-[1400px] mx-auto mb-20 mt-10">
         {products.length > 0 ? (
           <div>
-            <div>
+            <div className="">
               <Carousel wrapAround={true}>
                 {advertises?.map((advertise, index) => (
                   <img
@@ -72,7 +72,7 @@ const BrandPage = () => {
           </div>
         ) : (
           <div>
-            <div>
+            <div className="">
               <Carousel wrapAround={true}>
                 {advertises?.map((advertise, index) => (
                   <img

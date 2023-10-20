@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 
 const ThemeChanger = () => {
@@ -26,7 +26,6 @@ const ThemeChanger = () => {
       ? 'toggle mx-1'
       : ' toggle mx-1';
   
-    const buttonText = !isDark ? 'Turn on Dark Mode' : 'Turn Off Dark Mode';
   
     return (
       <div className="font-bold flex items-center mx-5 absolute right-0 top-24 md:relative md:top-0 md:right-4">

@@ -1,5 +1,3 @@
-import React from "react";
-import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
     const {_id, name, image, brand, price, rating, description, type} = product
