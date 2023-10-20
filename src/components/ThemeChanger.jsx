@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 const ThemeChanger = () => {
     const [isDark, setIsDark] = useState(false);
 
     const toggleTheme = () => {
-      setIsDark(!isDark);
+      if (!isDark) {
+        document.body.setAttribute('data-theme', 'dark');
+        setIsDark(!isDark);
+      }
+      if (isDark) {
+        document.body.setAttribute('data-theme', 'light');
+        setIsDark(!isDark);
+      }
+      
     };
+    useEffect(() => {
+      if (!isDark) {
+        document.body.setAttribute('data-theme', 'light');
+      }
+    }, [isDark]);
+    
   
     const buttonClass = isDark
       ? 'bg-black text-white focus:outline-none m-1 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20'
@@ -17,8 +31,7 @@ const ThemeChanger = () => {
     return (
       <div className="font-bold">
         <button
-          data-act-class="shadow-outline"
-          data-set-theme={!isDark ? 'dark' : ''}
+       
           className={buttonClass}
           onClick={toggleTheme}
         >
