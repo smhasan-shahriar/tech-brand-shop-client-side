@@ -98,7 +98,7 @@ const NavBar = () => {
         ) : (
           <div className="navbar-end">
             <ThemeChanger></ThemeChanger>
-            <Link to="/login" className="btn">
+            <Link to="/login" className="btn font-bold">
               Log In
             </Link>
           </div>
