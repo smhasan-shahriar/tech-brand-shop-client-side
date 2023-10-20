@@ -46,60 +46,61 @@ const BrandPage = () => {
     fetchFunction();
   }, []);
   return (
-    <div className="max-w-[1400px] mx-auto mb-20 mt-10">
-      {products.length > 0 ? (
-        <div>
+    <div className="pb-20">
+      <div className="max-w-[1400px] mx-auto mb-20 mt-10">
+        {products.length > 0 ? (
           <div>
-            <Carousel wrapAround={true}>
-              {advertises?.map((advertise, index) => (
-                <img
-                  className="w-full h-[60vh] object-contain"
-                  key={index}
-                  src={advertise}
-                />
+            <div>
+              <Carousel wrapAround={true}>
+                {advertises?.map((advertise, index) => (
+                  <img
+                    className="w-full h-[60vh] object-contain"
+                    key={index}
+                    src={advertise}
+                  />
+                ))}
+              </Carousel>
+            </div>
+            <h2 className="text-4xl font-bold my-10 text-center">
+              Products from {name}
+            </h2>
+            <div className="grid lg:grid-cols-2 gap-5 justify-items-center mx-5">
+              {products?.map((product) => (
+                <ProductCard key={product._id} product={product}></ProductCard>
               ))}
-            </Carousel>
+            </div>
           </div>
-
-          <h2 className="text-4xl font-bold my-10 text-center">
-            Products from {name}
-          </h2>
-          <div className="grid lg:grid-cols-2 gap-5 justify-items-center mx-5">
-            {products?.map((product) => (
-              <ProductCard key={product._id} product={product}></ProductCard>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div>
+        ) : (
           <div>
-            <Carousel wrapAround={true}>
-              {advertises?.map((advertise, index) => (
-                <img
-                  className="w-full h-[60vh] object-contain"
-                  key={index}
-                  src={advertise}
-                />
-              ))}
-            </Carousel>
-          </div>
-          {
-            loading && <div>
-              <div className="w-full h-[80vh] flex justify-center items-center">
-            <span className="loading loading-spinner loading-xs"></span>
-            <span className="loading loading-spinner loading-sm"></span>
-            <span className="loading loading-spinner loading-md"></span>
-            <span className="loading loading-spinner loading-lg"></span>
-          </div>
+            <div>
+              <Carousel wrapAround={true}>
+                {advertises?.map((advertise, index) => (
+                  <img
+                    className="w-full h-[60vh] object-contain"
+                    key={index}
+                    src={advertise}
+                  />
+                ))}
+              </Carousel>
             </div>
-          }
-          {!loading && show && (
-            <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
-              Sorry, Products from this brand is currently unavailable
+            {
+              loading && <div>
+                <div className="w-full h-[80vh] flex justify-center items-center">
+              <span className="loading loading-spinner loading-xs"></span>
+              <span className="loading loading-spinner loading-sm"></span>
+              <span className="loading loading-spinner loading-md"></span>
+              <span className="loading loading-spinner loading-lg"></span>
             </div>
-          )}
-        </div>
-      )}
+              </div>
+            }
+            {!loading && show && (
+              <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
+                Sorry, Products from this brand is currently unavailable
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

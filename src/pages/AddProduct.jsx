@@ -31,105 +31,106 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="max-w-[1400px] mx-auto bg-base-200 rounded-lg shadow-xl p-10 my-20">
-      <h2 className="text-4xl font-bold my-10 text-center">Add a Product</h2>
-      <form onSubmit={handleAddProduct} className="w-2/3 mx-auto">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Product Name</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Product Name"
-            name="name"
-            className="input input-bordered"
-            required
-          />
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Product Image</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Image URL"
-            name="image"
-            className="input input-bordered"
-            required
-          />
-        </div>
-        <div className="flex flex-col lg:flex-row gap-2">
-          <div className="form-control flex-1">
+    <div className="pb-20">
+      <div className="max-w-[1400px] mx-auto bg-base-200 rounded-lg shadow-xl p-10 my-20">
+        <h2 className="text-4xl font-bold my-10 text-center">Add a Product</h2>
+        <form onSubmit={handleAddProduct} className="w-2/3 mx-auto">
+          <div className="form-control">
             <label className="label">
-              <span className="label-text">Brand Name</span>
+              <span className="label-text">Product Name</span>
             </label>
             <input
               type="text"
-              placeholder="Brand Name"
-              name="brand"
+              placeholder="Product Name"
+              name="name"
               className="input input-bordered"
               required
             />
           </div>
-          <div className="form-control flex-1">
+          <div className="form-control">
             <label className="label">
-              <span className="label-text">Price</span>
+              <span className="label-text">Product Image</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Image URL"
+              name="image"
+              className="input input-bordered"
+              required
+            />
+          </div>
+          <div className="flex flex-col lg:flex-row gap-2">
+            <div className="form-control flex-1">
+              <label className="label">
+                <span className="label-text">Brand Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Brand Name"
+                name="brand"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control flex-1">
+              <label className="label">
+                <span className="label-text">Price</span>
+              </label>
+              <input
+                type="number"
+                placeholder="Price"
+                name="price"
+                step=".01"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control flex-1">
+              <label className="label">
+                <span className="label-text">Product Type</span>
+              </label>
+              <select name="type" className="input input-bordered">
+                <option value="computer">Computer</option>
+                <option value="phone">Phone</option>
+                <option value="headphone">Headphone</option>
+                <option value="smartwatch">Smart Watch</option>
+                <option value="tablet">Tablet</option>
+                <option value="console">Gaming Console</option>
+              </select>
+            </div>
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Short Description</span>
+            </label>
+            <textarea
+              placeholder="Short Description"
+              name="description"
+              className="textarea textarea-bordered textarea-lg w-full"
+            ></textarea>
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Rating</span>
             </label>
             <input
               type="number"
-              placeholder="Price"
-              name="price"
               step=".01"
+              placeholder="Rating (Out of 5)"
+              name="rating"
               className="input input-bordered"
+              min="0"
+              max="5"
               required
             />
           </div>
-          <div className="form-control flex-1">
-            <label className="label">
-              <span className="label-text">Product Type</span>
-            </label>
-            <select name="type" className="input input-bordered">
-              <option value="computer">Computer</option>
-              <option value="phone">Phone</option>
-              <option value="headphone">Headphone</option>
-              <option value="smartwatch">Smart Watch</option>
-              <option value="tablet">Tablet</option>
-              <option value="console">Gaming Console</option>
-            </select>
-          </div>
-        </div>
-
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Short Description</span>
-          </label>
-          <textarea
-            placeholder="Short Description"
-            name="description"
-            className="textarea textarea-bordered textarea-lg w-full"
-          ></textarea>
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Rating</span>
-          </label>
           <input
-            type="number"
-            step=".01"
-            placeholder="Rating (Out of 5)"
-            name="rating"
-            className="input input-bordered"
-            min="0"
-            max="5"
-            required
+            className="btn btn-outline w-full my-10 normal-case text-xl font-bold"
+            type="submit"
+            value="Add Product"
           />
-        </div>
-        <input
-          className="btn btn-outline w-full my-10 normal-case text-xl font-bold"
-          type="submit"
-          value="Add Product"
-        />
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

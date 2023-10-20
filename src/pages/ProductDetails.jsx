@@ -41,22 +41,24 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div className="max-w-[1920px] mx-auto mt-16 md:mt-0 mb-20">
-      <div className="relative">
-        <img className="h-[70vh] object-cover w-full" src={image} alt="" />
-        <div className="text-5xl bg-black text-white py-5 px-10 absolute bottom-0 w-full bg-opacity-60 text-center">
-          <p className="">{name}</p>
+    <div className="pb-20">
+      <div className="max-w-[1920px] mx-auto mt-16 md:mt-0 mb-20">
+        <div className="relative">
+          <img className="h-[70vh] object-cover w-full" src={image} alt="" />
+          <div className="text-5xl bg-black text-white py-5 px-10 absolute bottom-0 w-full bg-opacity-60 text-center">
+            <p className="">{name}</p>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col lg:flex-row">
-        <div className="flex justify-center items-center my-10">
-          <p className="text-xl font-medium lg:w-1/2 px-5">{description}</p>
-        </div>
-        <div className="w-1/2 mx-auto flex flex-col justify-center items-center relative lg:right-60">
-          <p className="font-bold text-xl">Price: ${price}</p>
-          <button className="btn btn-primary" onClick={handleAddToCart}>
-            Add to Cart
-          </button>
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex justify-center items-center my-10">
+            <p className="text-xl font-medium lg:w-1/2 px-5">{description}</p>
+          </div>
+          <div className="w-1/2 mx-auto flex flex-col justify-center items-center relative lg:right-60">
+            <p className="font-bold text-xl">Price: ${price}</p>
+            <button className="btn btn-primary" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
