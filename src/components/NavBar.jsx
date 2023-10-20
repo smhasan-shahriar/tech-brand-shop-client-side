@@ -1,26 +1,26 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../authentication/MainAuth";
-import { useEffect } from 'react'
-import { themeChange } from 'theme-change'
-import ThemeChanger from '../components/ThemeChanger';
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
+import ThemeChanger from "../components/ThemeChanger";
 import { useState } from "react";
 
 const NavBar = () => {
   useEffect(() => {
-    themeChange(false)
+    themeChange(false);
     // 👆 false parameter is required for react project
-  }, [])
+  }, []);
 
   const { user, logOut } = useContext(AuthContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const handleLogOut = () => {
     logOut()
-    .then(()=> toast('logged out'))
-    .catch(error => console.error(error.message))
-  }
+      .then(() => toast("logged out"))
+      .catch((error) => console.error(error.message));
+  };
   const navLinks = (
     <>
       <li>
@@ -32,19 +32,21 @@ const NavBar = () => {
       <li>
         <NavLink to="/mycart">My Cart</NavLink>
       </li>
-      {
-        !user && <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
-      }
-      
+      {!user && (
+        <li>
+          <NavLink to="/register">Register</NavLink>
+        </li>
+      )}
     </>
   );
   return (
     <div className="py-2">
       <div className="navbar max-w-[1600px] mx-auto">
         <div className="navbar-start">
-          <div className="dropdown" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+          <div
+            className="dropdown"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +77,7 @@ const NavBar = () => {
             src="https://i.ibb.co/yVqW2pp/icons8-technology-64.png"
             alt=""
           />
-          <a className="md:text-3xl font-black">Super Brand Shop</a>
+          <a className="md:text-3xl font-black">Tech Brand Shop</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -84,7 +86,11 @@ const NavBar = () => {
           <div className="navbar-end md:space-x-4 space-x-1">
             <ThemeChanger></ThemeChanger>
             <p>{user?.displayName}</p>
-            <img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" />
+            <img
+              className="w-12 h-12 rounded-full"
+              src={user.photoURL}
+              alt=""
+            />
             <Link onClick={handleLogOut} className="btn">
               Log Out
             </Link>
@@ -95,7 +101,6 @@ const NavBar = () => {
             <Link to="/login" className="btn">
               Log In
             </Link>
-            
           </div>
         )}
       </div>
