@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { AuthContext } from "../authentication/MainAuth";
 
 const BrandPage = () => {
-  const{loading, setLoading} = useContext(AuthContext)
+  const { loading, setLoading } = useContext(AuthContext);
   window.scrollTo({ top: 0 });
   const [show, setShow] = useState(false);
 
@@ -50,18 +50,13 @@ const BrandPage = () => {
       <div className="max-w-[1400px] mx-auto mb-20 mt-10">
         {products.length > 0 ? (
           <div>
-            <div className="">
-              <Carousel wrapAround={true}>
-                {advertises?.map((advertise, index) => (
-                  <img
-                    className="w-full h-[60vh] object-contain"
-                    key={index}
-                    src={advertise}
-                  />
-                ))}
-              </Carousel>
-            </div>
-            <h2 className="text-4xl font-bold my-10 text-center">
+            <AwesomeSlider className="max-w-[1440px] h-[200px] md:h-[400px] lg:h-[650px] mt-20 md:mt-0">
+              {advertises?.map((advertise, index) => (
+                <div data-src={advertise} key={index}></div>
+              ))}
+            </AwesomeSlider>
+
+            <h2 className="text-4xl font-bold mt-20 mb-10 text-center">
               Products from {name}
             </h2>
             <div className="grid lg:grid-cols-2 gap-5 justify-items-center mx-5">
@@ -72,27 +67,21 @@ const BrandPage = () => {
           </div>
         ) : (
           <div>
-            <div className="">
-              <Carousel wrapAround={true}>
-                {advertises?.map((advertise, index) => (
-                  <img
-                    className="w-full h-[60vh] object-contain"
-                    key={index}
-                    src={advertise}
-                  />
-                ))}
-              </Carousel>
-            </div>
-            {
-              loading && <div>
+            <AwesomeSlider className="max-w-[1440px] h-[200px] md:h-[400px] lg:h-[650px] mt-20 md:mt-0">
+              {advertises?.map((advertise, index) => (
+                <div data-src={advertise} key={index}></div>
+              ))}
+            </AwesomeSlider>
+            {loading && (
+              <div>
                 <div className="w-full h-[80vh] flex justify-center items-center">
-              <span className="loading loading-spinner loading-xs"></span>
-              <span className="loading loading-spinner loading-sm"></span>
-              <span className="loading loading-spinner loading-md"></span>
-              <span className="loading loading-spinner loading-lg"></span>
-            </div>
+                  <span className="loading loading-spinner loading-xs"></span>
+                  <span className="loading loading-spinner loading-sm"></span>
+                  <span className="loading loading-spinner loading-md"></span>
+                  <span className="loading loading-spinner loading-lg"></span>
+                </div>
               </div>
-            }
+            )}
             {!loading && show && (
               <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
                 Sorry, Products from this brand is currently unavailable

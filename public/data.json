@@ -14,9 +14,9 @@
     "name": "Apple",
     "image": "https://i.ibb.co/bJJnP0g/Apple-Inc-Logo-wine.png",
     "advertise": [
-        "https://i.ibb.co/r6LN2XW/apple-ad-1.jpg",
-        "https://i.ibb.co/C2XvgbD/apple-ad-3.jpg",
-        "https://i.ibb.co/QDbc0Wc/apple-ad-2.png"
+      "https://i.ibb.co/r6LN2XW/apple-ad-1.jpg",
+      "https://i.ibb.co/C2XvgbD/apple-ad-3.jpg",
+      "https://i.ibb.co/QDbc0Wc/apple-ad-2.png"
     ]
   },
   {
@@ -44,9 +44,9 @@
     "name": "Microsoft",
     "image": "https://i.ibb.co/4JGkbks/Microsoft-Logo-wine.png",
     "advertise": [
-      "https://i.ibb.co/kSrkrjm/microsoft-ad-3.jpg",
       "https://i.ibb.co/BwxD7g5/microsoft-ad-2.png",
-      "https://i.ibb.co/CMmSk7N/microsoft-ad-1.jpg"
+      "https://i.ibb.co/CMmSk7N/microsoft-ad-1.jpg",
+      "https://i.ibb.co/kSrkrjm/microsoft-ad-3.jpg"
     ]
   },
   {
@@ -54,9 +54,9 @@
     "name": "Sony",
     "image": "https://i.ibb.co/gWWJF5j/Sony-Logo-wine.png",
     "advertise": [
-      "https://i.ibb.co/Bz60cCK/sony-ad-3.jpg",
       "https://i.ibb.co/qJDfQnm/sony-ad-2.jpg",
-      "https://i.ibb.co/vs8SmmV/sony-ad-1.jpg"
+      "https://i.ibb.co/vs8SmmV/sony-ad-1.jpg",
+      "https://i.ibb.co/Bz60cCK/sony-ad-3.jpg"
     ]
   }
 ]
