@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
   return (
-    <div className="max-w-[1400px] mx-auto pb-10">
+    <div className="max-w-[1400px] mx-auto pb-20">
       <div className=" shadow-lg p-10">
         <h2 className="text-4xl font-bold my-10 text-center">Contact Us</h2>
         <div className=" flex flex-col md:flex-row gap-20">
