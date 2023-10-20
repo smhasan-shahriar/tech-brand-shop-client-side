@@ -23,8 +23,8 @@ const ThemeChanger = () => {
     
   
     const buttonClass = isDark
-      ? 'bg-black text-white focus:outline-none m-1 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20'
-      : ' text-black m-1 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20';
+      ? 'bg-black text-white focus:outline-none m-1 md:mx-3 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20'
+      : ' text-black m-1 md:mx-3 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20';
   
     const buttonText = !isDark ? 'Turn on Dark Mode' : 'Turn Off Dark Mode';
   
