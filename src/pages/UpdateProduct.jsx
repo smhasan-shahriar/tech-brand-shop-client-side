@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 const UpdateProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  window.scrollTo({ top: 0 });
 
   useEffect(() => {
     const fetchFunction = async () => {
