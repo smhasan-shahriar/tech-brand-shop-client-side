@@ -60,6 +60,7 @@ const UpdateProduct = () => {
             type="text"
             placeholder="Product Name"
             name="name"
+            defaultValue={product.name}
             className="input input-bordered"
             required
           />
@@ -73,6 +74,7 @@ const UpdateProduct = () => {
             placeholder="Image URL"
             name="image"
             className="input input-bordered"
+            defaultValue={product.image}
             required
           />
         </div>
@@ -86,6 +88,7 @@ const UpdateProduct = () => {
               placeholder="Brand Name"
               name="brand"
               className="input input-bordered"
+              defaultValue={product.brand}
               required
             />
           </div>
@@ -99,6 +102,7 @@ const UpdateProduct = () => {
               name="price"
               step=".01"
               className="input input-bordered"
+              defaultValue={product.price}
               required
             />
           </div>
@@ -127,6 +131,7 @@ const UpdateProduct = () => {
             placeholder="Rating (Out of 5)"
             name="rating"
             className="input input-bordered"
+            defaultValue={product.rating}
             min="0"
             max="5"
             required
