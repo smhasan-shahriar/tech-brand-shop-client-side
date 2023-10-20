@@ -7,34 +7,33 @@ import { AuthContext } from "../authentication/MainAuth";
 const MyCart = () => {
   const { user } = useContext(AuthContext);
   const [cart, setCart] = useState([]);
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
   const [displayProducts, setDisplayProducts] = useState([]);
-  const fetchCartFunction = async () => {
-    const response = await fetch("https://brandshop-server-indol.vercel.app/mycart")
-    if (response.status === 200){
+
+  useEffect(() => {
+    const fetchCartFunction = async () => {
+      const response = await fetch(
+        "https://brandshop-server-indol.vercel.app/mycart"
+      );
+  
       const data = await response.json();
-      setCart(data)
-      return;
-    }
-    setTimeout(fetchCartFunction, 500)
-  }
-  useEffect(()=>{
+      setCart(data);
+    };
     fetchCartFunction();
-  },[])
+  }, []);
 
 
-  const fetchProductsFunction = async () => {
-    const response = await fetch("https://brandshop-server-indol.vercel.app/products")
-    if (response.status === 200){
-      const data = await response.json();
-      setProducts(data)
-      return;
-    }
-    setTimeout(fetchProductsFunction, 500)
-  }
-  useEffect(()=>{
+  useEffect(() => {
+    const fetchProductsFunction = async () => {
+      const response = await fetch(
+        "https://brandshop-server-indol.vercel.app/products"
+      );
+  
+        const data = await response.json();
+        setProducts(data);
+      }
     fetchProductsFunction();
-  },[])
+  }, []);
 
   useEffect(() => {
     const userProducts = cart.filter((product) => product.email === user.email);
@@ -50,7 +49,6 @@ const MyCart = () => {
 
     setDisplayProducts(displayArray);
   }, [user, cart, products]);
-
 
   const email = user.email;
   const myRef = { email };
@@ -68,15 +66,14 @@ const MyCart = () => {
         if (data.deletedCount > 0) {
           toast("successfully deleted");
           let found = false;
-          const updatedProducts = displayProducts.filter(
-            (product) =>{ 
-              if (product._id === id && !found){
-                found = true;
-                return false;
-              }
-              
-              return true}
-          );
+          const updatedProducts = displayProducts.filter((product) => {
+            if (product._id === id && !found) {
+              found = true;
+              return false;
+            }
+
+            return true;
+          });
           setDisplayProducts(updatedProducts);
         }
       });

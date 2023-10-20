@@ -63,11 +63,7 @@ const MainRouter = createBrowserRouter([
           <PrivateRoutes>
             <UpdateProduct></UpdateProduct>
           </PrivateRoutes>
-        ),
-        loader: ({ params }) =>
-          fetch(
-            `https://brandshop-server-indol.vercel.app/updateproducts/${params.id}`
-          ),
+        )
       },
     ],
   },

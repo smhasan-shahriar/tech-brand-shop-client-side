@@ -5,22 +5,22 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
-  const {id} = useParams()
+  const { id } = useParams();
   window.scrollTo({ top: 0 });
-  const [product, setProduct] = useState({})
+  const [product, setProduct] = useState({});
   const { _id, name, image, brand, price, rating, description, type } = product;
-  const fetchFunction = async () => {
-    const response = await fetch(`https://brandshop-server-indol.vercel.app/products/${id}`)
-    if (response.status === 200){
+ 
+  useEffect(() => {
+    const fetchFunction = async () => {
+      const response = await fetch(
+        `https://brandshop-server-indol.vercel.app/products/${id}`
+      );
+  
       const data = await response.json();
-      setProduct(data)
-      return;
-    }
-    setTimeout(fetchFunction, 500)
-  }
-  useEffect(()=>{
+      setProduct(data);
+    };
     fetchFunction();
-  },[])
+  }, []);
   const handleAddToCart = () => {
     const email = user?.email;
     const productId = _id;

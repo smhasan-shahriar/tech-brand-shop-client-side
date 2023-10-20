@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
@@ -6,8 +6,10 @@ import Carousel from "nuka-carousel";
 import ProductCard from "../components/ProductCard";
 import { useState } from "react";
 import { useEffect } from "react";
+import { AuthContext } from "../authentication/MainAuth";
 
 const BrandPage = () => {
+  const{loading, setLoading} = useContext(AuthContext)
   window.scrollTo({ top: 0 });
   const [show, setShow] = useState(false);
 
@@ -30,18 +32,17 @@ const BrandPage = () => {
   const { name } = useParams();
   const particularBrand = selectedBrand.find((item) => item.name === name);
   const advertises = particularBrand?.advertise;
-  const fetchFunction = async () => {
-    const response = await fetch(
-      `https://brandshop-server-indol.vercel.app/brands/${name}`
-    );
-    if (response.status === 200) {
+
+  useEffect(() => {
+    const fetchFunction = async () => {
+      setLoading(true);
+      const response = await fetch(
+        `https://brandshop-server-indol.vercel.app/brands/${name}`
+      );
       const data = await response.json();
       setProducts(data);
-      return;
-    }
-    setTimeout(fetchFunction, 500);
-  };
-  useEffect(() => {
+      setLoading(false);
+    };
     fetchFunction();
   }, []);
   return (
@@ -82,11 +83,21 @@ const BrandPage = () => {
               ))}
             </Carousel>
           </div>
-        {
-          show &&   <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
-          Sorry, Products from this brand is currently unavailable
-        </div>
-        }
+          {
+            loading && <div>
+              <div className="w-full h-[80vh] flex justify-center items-center">
+            <span className="loading loading-spinner loading-xs"></span>
+            <span className="loading loading-spinner loading-sm"></span>
+            <span className="loading loading-spinner loading-md"></span>
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
+            </div>
+          }
+          {!loading && show && (
+            <div className="py-20 flex justify-center items-center text-6xl font-bold text-center">
+              Sorry, Products from this brand is currently unavailable
+            </div>
+          )}
         </div>
       )}
     </div>

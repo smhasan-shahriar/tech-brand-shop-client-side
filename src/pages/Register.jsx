@@ -3,7 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineGoogle } from "react-icons/ai";
 import { Link } from 'react-router-dom';
-import AuthHook from '../hooks/AuthHook';
 import { AuthContext } from '../authentication/MainAuth';
 
 const Register = () => {

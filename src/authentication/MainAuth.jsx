@@ -43,7 +43,7 @@ const MainAuth = ({children}) => {
         })
         return () => unsubscribe();
     },[])
-    const myRef = {user, loading, createUser, logIn, socialLogIn, logOut, updateUserProfile}
+    const myRef = {user, loading, setLoading, createUser, logIn, socialLogIn, logOut, updateUserProfile}
 
     return (
         <div>
