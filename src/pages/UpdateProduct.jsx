@@ -44,7 +44,6 @@ const UpdateProduct = () => {
         console.log(data);
         if (data.modifiedCount > 0) {
           toast("Product has been successfully updated");
-          form.reset();
         }
       });
   };
