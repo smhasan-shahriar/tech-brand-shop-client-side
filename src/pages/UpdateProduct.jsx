@@ -43,6 +43,7 @@ const UpdateProduct = () => {
         console.log(data);
         if (data.modifiedCount > 0) {
           toast("Product successfully updated");
+          form.reset();
         }
       });
   };

@@ -25,6 +25,7 @@ const AddProduct = () => {
         console.log(data);
         if (data.insertedId){
           toast("Product successfully added");
+          form.reset();
         }
        
       });
