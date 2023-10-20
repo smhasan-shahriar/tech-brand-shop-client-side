@@ -48,7 +48,7 @@ const UpdateProduct = () => {
       });
   };
   return (
-    <div className="py-20">
+    <div className="pb-20">
       <div className="max-w-[1400px] mx-auto bg-base-200 rounded-lg shadow-xl p-10 my-20">
         <h2 className="text-4xl font-bold my-10 text-center">Update Product</h2>
         <form onSubmit={handleUpdateProduct} className="w-2/3 mx-auto">
