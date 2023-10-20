@@ -24,7 +24,7 @@ const AddProduct = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId){
-          toast("Product successfully added");
+          toast("Product has been successfully added to the database");
           form.reset();
         }
        
