@@ -83,7 +83,7 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         {user ? (
-          <div className="navbar-end md:space-x-4 space-x-1">
+          <div className="navbar-end lg:space-x-4 md:space-x-2 space-x-1">
             <ThemeChanger></ThemeChanger>
             <p>{user?.displayName}</p>
             <img

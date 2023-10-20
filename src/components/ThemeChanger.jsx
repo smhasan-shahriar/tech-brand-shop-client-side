@@ -23,20 +23,22 @@ const ThemeChanger = () => {
     
   
     const buttonClass = isDark
-      ? 'bg-black text-white focus:outline-none m-1 md:mx-3 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20'
-      : ' text-black m-1 md:mx-3 rounded p-2 shadow-outline btn capitalize w-24 absolute md:static right-0 top-20';
+      ? 'toggle mx-1'
+      : ' toggle mx-1';
   
     const buttonText = !isDark ? 'Turn on Dark Mode' : 'Turn Off Dark Mode';
   
     return (
-      <div className="font-bold">
-        <button
-       
+      <div className="font-bold flex items-center mx-5 absolute right-0 top-24 md:relative md:top-0 md:right-4">
+        <img className="w-10" src="https://i.ibb.co/rwNJ830/icons8-light-mode-78.png" alt="" />
+        <input
+
           className={buttonClass}
           onClick={toggleTheme}
-        >
-          {buttonText}
-        </button>
+          type="checkbox"
+         
+        />
+        <img className="w-5" src="https://i.ibb.co/m5DGNYG/dark-mode-6682.png" alt="" />
       </div>
     );
   }
