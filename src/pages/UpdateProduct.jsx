@@ -114,7 +114,7 @@ const UpdateProduct = () => {
                 <option value="Computer">Computer</option>
                 <option value="Phone">Phone</option>
                 <option value="Headphone">Headphone</option>
-                <option value="Smartwatch">Smart Watch</option>
+                <option value="Smart Watch">Smart Watch</option>
                 <option value="Tablet">Tablet</option>
                 <option value="Gaming Console">Gaming Console</option>
               </select>
