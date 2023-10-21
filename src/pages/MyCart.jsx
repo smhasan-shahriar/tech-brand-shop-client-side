@@ -64,7 +64,7 @@ const MyCart = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-          toast("successfully deleted");
+          toast("Product has been successfully deleted from your cart");
           let found = false;
           const updatedProducts = displayProducts.filter((product) => {
             if (product._id === id && !found) {

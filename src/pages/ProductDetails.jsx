@@ -9,13 +9,13 @@ const ProductDetails = () => {
   window.scrollTo({ top: 0 });
   const [product, setProduct] = useState({});
   const { _id, name, image, brand, price, rating, description, type } = product;
- 
+
   useEffect(() => {
     const fetchFunction = async () => {
       const response = await fetch(
         `https://brandshop-server-indol.vercel.app/products/${id}`
       );
-  
+
       const data = await response.json();
       setProduct(data);
     };
@@ -50,12 +50,24 @@ const ProductDetails = () => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row">
-          <div className="flex justify-center items-center my-10">
+          <div className="flex flex-col justify-center lg:items-center my-10">
             <p className="text-xl font-medium lg:w-1/2 px-5">{description}</p>
+            <div className="flex flex-col lg:flex-row gap-10 lg:w-1/2 relative left-5 py-5">
+              <p className="text-xl font-medium">
+                Brand Name: <span className="font-bold">{brand}</span>
+              </p>
+              <p className="text-xl font-medium">
+                Product Type: <span className="font-bold">{type}</span>
+              </p>
+              <p className="text-xl font-medium">
+                Product Rating: <span className="font-bold">{rating}</span>/5
+              </p>
+            </div>
+            <div></div>
           </div>
-          <div className="w-1/2 mx-auto flex flex-col justify-center items-center relative lg:right-60">
+          <div className="w-1/2 mx-auto flex flex-col gap-4 justify-center items-center relative lg:right-40">
             <p className="font-bold text-xl">Price: ${price}</p>
-            <button className="btn btn-primary" onClick={handleAddToCart}>
+            <button className="btn btn-primary w-full lg:w-40 normal-case text-xl" onClick={handleAddToCart}>
               Add to Cart
             </button>
           </div>
