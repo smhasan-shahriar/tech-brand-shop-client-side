@@ -51,7 +51,7 @@ const ProductDetails = () => {
         </div>
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col justify-center lg:items-center my-10">
-            <p className="text-xl font-medium lg:w-1/2 px-5">{description}</p>
+            <p className="text-xl font-medium lg:w-1/2 px-5 text-justify">{description}</p>
             <div className="flex flex-col lg:flex-row gap-10 lg:w-1/2 relative left-5 py-5">
               <p className="text-xl font-medium">
                 Brand Name: <span className="font-bold">{brand}</span>
