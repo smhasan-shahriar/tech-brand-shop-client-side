@@ -93,7 +93,7 @@ const MyCart = () => {
             >
               <div className="md:w-1/3">
                 <img
-                  className="w-full md:w-72 md:h-52 object-cover"
+                  className="w-[360px] md:w-72 h-52 object-cover"
                   src={product.image}
                   alt=""
                 />
