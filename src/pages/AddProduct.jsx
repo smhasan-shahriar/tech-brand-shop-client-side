@@ -23,11 +23,10 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId){
+        if (data.insertedId) {
           toast("Product has been successfully added to the database");
           form.reset();
         }
-       
       });
   };
   return (
@@ -64,13 +63,14 @@ const AddProduct = () => {
               <label className="label">
                 <span className="label-text">Brand Name</span>
               </label>
-              <input
-                type="text"
-                placeholder="Brand Name"
-                name="brand"
-                className="input input-bordered"
-                required
-              />
+              <select name="brand" className="input input-bordered">
+                <option value="Samsung">Samsung</option>
+                <option value="Apple">Apple</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Google">Google</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Sony">Sony</option>
+              </select>
             </div>
             <div className="form-control flex-1">
               <label className="label">

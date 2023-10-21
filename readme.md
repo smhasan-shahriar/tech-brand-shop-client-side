@@ -3,7 +3,7 @@
 
 **Features:**
 
-The project named “Tech Brand Shop” facilitates users to look through technological and electronics products i.e. smartwatch, tablet etc. of 6 popular brands. The main features of the project are given below.
+The project named “Tech Brand Shop” facilitates users to look through technological and electronics products i.e. smartwatch, tablet etc. of 6 popular brands(Samsung, Apple, Xiaomi, Google, Microsoft, Sony). The main features of the project are given below.
 
 - **brands at a glance:** The project allows users to view all the brands offered by the company in the homepage. They can click on a particular brand and browse the products of that brand.
 - **Click to View Product Details:** The project allows users to view the details of a particular product by clicking "Details" button in any of the products in the brand page if they are logged in. Users can also see some advertisements of the brand and scroll through the ads in the page banner.

@@ -12,7 +12,7 @@ const UpdateProduct = () => {
       const response = await fetch(
         `https://brandshop-server-indol.vercel.app/products/${id}`
       );
-  
+
       const data = await response.json();
       setProduct(data);
       return;
@@ -83,14 +83,14 @@ const UpdateProduct = () => {
               <label className="label">
                 <span className="label-text">Brand Name</span>
               </label>
-              <input
-                type="text"
-                placeholder="Brand Name"
-                name="brand"
-                className="input input-bordered"
-                defaultValue={product.brand}
-                required
-              />
+              <select name="brand" className="input input-bordered">
+                <option value="Samsung">Samsung</option>
+                <option value="Apple">Apple</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Google">Google</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Sony">Sony</option>
+              </select>
             </div>
             <div className="form-control flex-1">
               <label className="label">

@@ -105,7 +105,7 @@ const MyCart = () => {
                 </h3>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Price: ${product.price}</h3>
+                <h3 className="text-xl md:min-w-[120px]">Price: <span className="font-bold">${product.price}</span></h3>
               </div>
               <div>
                 <button
