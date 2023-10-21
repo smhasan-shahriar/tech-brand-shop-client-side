@@ -111,12 +111,12 @@ const UpdateProduct = () => {
                 <span className="label-text">Product Type</span>
               </label>
               <select name="type" className="input input-bordered">
-                <option value="computer">Computer</option>
-                <option value="phone">Phone</option>
-                <option value="headphone">Headphone</option>
-                <option value="smartwatch">Smart Watch</option>
-                <option value="tablet">Tablet</option>
-                <option value="console">Gaming Console</option>
+                <option value="Computer">Computer</option>
+                <option value="Phone">Phone</option>
+                <option value="Headphone">Headphone</option>
+                <option value="Smartwatch">Smart Watch</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Gaming Console">Gaming Console</option>
               </select>
             </div>
           </div>
